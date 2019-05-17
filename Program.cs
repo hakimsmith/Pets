@@ -6,35 +6,21 @@ namespace VirtualPetTeam
     {
         static void Main(string[] args)
         {
-            string startExitDirections = "";
+            string startExit = "";
+            bool playing = true;
             do
-            { 
-            Console.WriteLine("1 = start: 2 = directions: 3 = exit");
-            startExitDirections = Console.ReadLine();
+            {
+                Console.WriteLine("1 = start: 2 = exit");
+                startExit = Console.ReadLine();
 
-                if (startExitDirections == "2")
+                if (startExit == "2")
                 {
-                    Console.WriteLine("directions");
+                    playing = false;
                 }
 
-            if (startExitDirections == "3")
-            {
-                Environment.Exit(0);
-            }
-            }
-            while (startExitDirections != "1");
+            } while (playing);
 
-            if (startExitDirections != "3" && startExitDirections != "2")
-                {
-                    Console.WriteLine("hello");
-
-
-
-
-
-
-            }
-
+            Console.WriteLine("Goodbye");
         }
     }
 }
