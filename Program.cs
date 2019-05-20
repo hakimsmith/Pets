@@ -19,7 +19,9 @@ namespace VirtualPetTeam
                 }
 
             } while (playing);
-
+            
+            Cat fatCat = new Cat("Fatcat", "Tabbycat");
+                
             Console.WriteLine("Goodbye");
         }
     }
