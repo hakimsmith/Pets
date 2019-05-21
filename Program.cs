@@ -6,64 +6,67 @@ namespace VirtualPetTeam
     {
         static void Main(string[] args)
         {
+            Cat newCat = new Cat("no name", "no species", 10, 10, 10);
             string menuChoice = "";
             bool playing = true;
             do
             {
-                Console.WriteLine("1 = start: 2 = add pet: 3 = pet info: 4 = exit:");
+                Console.WriteLine("1 = Interact: 2 = Add Pet: 3 = Pet Info: 4 = Exit: 5 = Pet Status:");
                 menuChoice = Console.ReadLine();
 
 
                 switch (menuChoice)
-                {
+                { 
                     case "1":
+                        bool interacting = true;
+                        string interact = ""; 
+                        do
+                        {
+                            Console.WriteLine("1 = Feed: 2 = Play: 3 = Take your pet to the Vet: 4 = Quit Interacting");
+                            interact = Console.ReadLine();
+                            switch (interact)
+                            {
+                                case "1":
+                                    newCat.Feed();
+                                    break;
+                                case "2":
+                                    newCat.Play();
+                                    break;
+                                case "3":
+                                    newCat.Doctor();
+                                    break;
+                                case "4":
+                                    {
+                                        interacting = false;
+                                    }
+                                    break;
+                            }
+                        }
+                        while (interacting);
                         break;
+
                     case "2":
-                        Cat bigCat = new Cat("no name", "non species");
                         Console.WriteLine("What would you like to name your pet?");
-                        bigCat.Name = Console.ReadLine();
+                        newCat.Name = Console.ReadLine();
                         Console.WriteLine("What would you like its species?");
-                        bigCat.Species = Console.ReadLine();
+                        newCat.Species = Console.ReadLine();
                         break;
+                       
                     case "3":
-                        Console.WriteLine(" Your pet's name is" + bigCat.Name + ", the species" + bigCat.Species );
+                        newCat.Greet(); 
                         break;
+
                     case "4":
                         Environment.Exit(0);
                         break;
 
-                    
-                
-                        
-
-
-
-
-
+                    case "5":
+                        newCat.Status();  
+                        break;
                 }
-
-
-/*
-
-                if (menuChoice == "3")
-                {
-                    playing = false;
-                }
-                if (menuChoice == "2") 
-*/
-                    
             }
-
-            
                 while (playing) ;
-
-            
-
-            
-
-            Cat fatCat = new Cat("Fatcat", "Tabbycat");
-                
-            Console.WriteLine("Good bye player.");
-        }
+            Console.WriteLine("Good-bye player.");
+        } 
     }
 }
