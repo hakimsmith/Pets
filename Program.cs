@@ -6,12 +6,15 @@ namespace VirtualPetTeam
     {
         static void Main(string[] args)
         {
-            Cat newCat = new Cat("no name", "no species", 10, 10, 10);
+            Cat newCat = new Cat("no name", "no species");
             string menuChoice = "";
             bool playing = true;
+            Console.WriteLine("Welcome to the Pet Shelter.");
             do
             {
-                Console.WriteLine("1 = Interact: 2 = Add Pet: 3 = Pet Info: 4 = Exit: 5 = Pet Status:");
+                Console.WriteLine("Press any key to continue.");
+                Console.ReadLine();
+                Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info:\n 4 = Pet Status:\n 5 = Exit:");
                 menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 { 
@@ -20,19 +23,19 @@ namespace VirtualPetTeam
                         break;
 
                     case "2":
-                        newCat.Addpet();
+                        newCat.AddPet();
                         break;
                        
                     case "3":
-                        newCat.Greet(); 
+                        newCat.PetInfo(); 
                         break;
 
                     case "4":
-                        Environment.Exit(0);
+                        newCat.PetStatus();
                         break;
 
                     case "5":
-                        newCat.Status();  
+                        playing = false;
                         break;
                 }
             }

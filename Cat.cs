@@ -12,21 +12,21 @@ namespace VirtualPetTeam
         public int Boredom { get; set; }
         public int Health { get; set; }
 
-        public Cat(string name, string species, int hunger, int boredom, int health)
+        public Cat(string name, string species)
         {
             Name = name;
             Species = species;
-            Hunger = hunger;
-            Boredom = boredom;
-            Health = health;
+            Hunger = 10;
+            Boredom = 10;
+            Health = 10;
         }
 
-        public void Greet()
+        public void PetInfo()
         {
             Console.WriteLine("I'm " + Name + "! My species is " + Species + ".");
         }
 
-        public void Status()
+        public void PetStatus()
         {
             Console.WriteLine(Name + "'s status is :");
             Console.WriteLine("Hunger: " + Hunger + "/20");
@@ -36,19 +36,22 @@ namespace VirtualPetTeam
 
         public void Feed()
         {
-            Hunger = (Hunger + 2);
+            Hunger += 2;
+            Console.WriteLine("Thanks for the food, human!");
         }
 
         public void Play()
         {
-            Boredom = (Boredom + 3);
-            Hunger = (Hunger - 1);
-            Health = (Health - 1);
+            Boredom += 3;
+            Hunger -= 1;
+            Health -= 1;
+            Console.WriteLine("That was fun!");
         }
 
         public void Doctor()
         {
-            Health = (Health + 2);
+            Health += 1;
+            Console.WriteLine("Wow. I feel so much better now!");
         }
 
         public void Interact()
@@ -57,7 +60,9 @@ namespace VirtualPetTeam
             string interact = "";
             do
             {
-                Console.WriteLine("1 = Feed: 2 = Play: 3 = Take your pet to the Vet: 4 = Quit Interacting");
+                Console.WriteLine("You are interacting with your pet. Press any key to continue.");
+                Console.ReadLine();
+                Console.WriteLine(" 1 = Feed:\n 2 = Play:\n 3 = Take your pet to the Vet:\n 4 = Quit Interacting");
                 interact = Console.ReadLine();
                 switch (interact)
                 {
@@ -82,7 +87,7 @@ namespace VirtualPetTeam
             while (interacting);
         }
 
-        public void Addpet()
+        public void AddPet()
         {
             Console.WriteLine("What would you like to name your pet?");
             Name = Console.ReadLine();
