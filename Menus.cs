@@ -5,37 +5,34 @@ using System.Text;
 namespace VirtualPetTeam
 {
     class Menus
-    {
-        public void Mainmenu()
+    {  
+        public void GetMainMenu()
         {
             string menuChoice = "";
             bool playing = true;
+            PetShelter shelter = new PetShelter();
             Cat newCat = new Cat("no name", "no species");
             do
             {
                 Console.WriteLine("Press any key to continue.");
                 Console.ReadLine();
-                Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info:\n 4 = Pet Status:\n 5 = Exit:");
+                Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info:\n 4 = Exit:");
                 menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 {
                     case "1":
-                        newCat.Interact();
+                        shelter.ShelterInteract();
                         break;
 
                     case "2":
-                        newCat.AddPet();
+                        shelter.AddPetToShelter();
                         break;
 
                     case "3":
-                        newCat.PetInfo();
+                        shelter.ShelterInfo();
                         break;
 
                     case "4":
-                        newCat.PetStatus();
-                        break;
-
-                    case "5":
                         playing = false;
                         break;
                 }

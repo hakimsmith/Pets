@@ -6,8 +6,9 @@ namespace VirtualPetTeam
     {
         static void Main(string[] args)
         {
+            Menus mainMenu = new Menus();
             Console.WriteLine("Welcome to the Pet Shelter.");
-
+            mainMenu.GetMainMenu();
         } 
     }
 }

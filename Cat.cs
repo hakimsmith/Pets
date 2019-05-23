@@ -48,7 +48,7 @@ namespace VirtualPetTeam
             Console.WriteLine("That was fun!");
         }
 
-        public void Doctor()
+        public void GoToDoctor()
         {
             Health += 1;
             Console.WriteLine("Wow. I feel so much better now!");
@@ -73,7 +73,7 @@ namespace VirtualPetTeam
                         Play();
                         break;
                     case "3":
-                        Doctor();
+                        GoToDoctor();
                         break;
                     case "4":
                         {
