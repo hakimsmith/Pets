@@ -8,6 +8,7 @@ namespace VirtualPetTeam
     {  
         public void GetMainMenu()
         {
+            
             string menuChoice = "";
             bool playing = true;
             PetShelter shelter = new PetShelter();
@@ -16,12 +17,25 @@ namespace VirtualPetTeam
             {
                 Console.WriteLine("Press any key to continue.");
                 Console.ReadLine();
-                Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info:\n 4 = Exit:");
+                Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info:\n 4 = Pet Status:\n 5 = Exit:");
                 menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 {
                     case "1":
-                        shelter.ShelterInteract();
+                        string subInteractMenu = "";
+                        Console.WriteLine("1 = Interact with all; == 2 = Interact with single pet;");
+                        subInteractMenu = Console.ReadLine();
+                        switch(subInteractMenu)
+                        {
+                            case "1":
+                                shelter.ShelterInteract();
+                                break;
+                            case "2":
+                                Console.WriteLine("Select single pet.");
+                                shelter.ShelterInfo();
+                                
+
+                        }
                         break;
 
                     case "2":
@@ -33,6 +47,10 @@ namespace VirtualPetTeam
                         break;
 
                     case "4":
+                        newCat.PetStatus();
+                        break;
+
+                    case "5":
                         playing = false;
                         break;
                 }
