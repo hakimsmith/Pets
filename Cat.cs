@@ -37,7 +37,7 @@ namespace VirtualPetTeam
         public void Feed()
         {
             Hunger += 2;
-            Console.WriteLine("Thanks for the food, human!");
+            Console.WriteLine("You have fed " + Name);
         }
 
         public void Play()
@@ -45,13 +45,13 @@ namespace VirtualPetTeam
             Boredom += 3;
             Hunger -= 1;
             Health -= 1;
-            Console.WriteLine("That was fun!");
+            Console.WriteLine("You have played with " + Name);
         }
 
         public void GoToDoctor()
         {
             Health += 1;
-            Console.WriteLine("Wow. I feel so much better now!");
+            Console.WriteLine("You have took " + Name + " to the vet!");
         }
 
         public void Interact()
@@ -60,10 +60,13 @@ namespace VirtualPetTeam
             string interact = "";
             do
             {
-                Console.WriteLine("You are interacting with your selected pet. Press any key to continue.");
+                Console.WriteLine("You are interacting with " + Name + ". Press any key to continue.");
                 Console.ReadLine();
                 Console.Clear();
+                Console.WriteLine("Interact Menu");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(" 1 = Feed:\n 2 = Play:\n 3 = Take your pet to the Vet:\n 4 = Quit Interacting");
+                Console.ForegroundColor = ConsoleColor.White;
                 interact = Console.ReadLine();
                 switch (interact)
                 {
