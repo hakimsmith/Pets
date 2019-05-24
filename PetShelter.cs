@@ -6,9 +6,12 @@ namespace VirtualPetTeam
 {
     class PetShelter
     {
+        Cat newCat = new Cat("no name", "no species");
         List<Cat> petList = new List<Cat>();
         public void AddPetToShelter()
         {
+
+            
             Cat newCat = new Cat("no name", "no species");
             newCat.AddPet();
             petList.Add(newCat);
@@ -63,12 +66,18 @@ namespace VirtualPetTeam
             }
 
             while (interacting);
-
-
-
-
-
         }
-    }
         
+        public void PetSelect()
+        {
+            Console.WriteLine("Enter the number of the pet you want to interact with.");
+            ShelterInfo();
+            int petListSelect = Convert.ToInt32(Console.ReadLine());
+            petList[petListSelect - 1].Interact();
+        }
+   
+
+    }
 }
+        
+

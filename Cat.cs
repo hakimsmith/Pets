@@ -54,26 +54,26 @@ namespace VirtualPetTeam
             Console.WriteLine("Wow. I feel so much better now!");
         }
 
-        public void Interact(Cat pet)
+        public void Interact()
         {
             bool interacting = true;
             string interact = "";
             do
             {
-                Console.WriteLine("You are interacting with " + pet.Name + ". Press any key to continue.");
+                Console.WriteLine("You are interacting with your pet" + ". Press any key to continue.");
                 Console.ReadLine();
                 Console.WriteLine(" 1 = Feed:\n 2 = Play:\n 3 = Take your pet to the Vet:\n 4 = Quit Interacting");
                 interact = Console.ReadLine();
                 switch (interact)
                 {
                     case "1":
-                        pet.Feed();
+                        Feed();
                         break;
                     case "2":
-                        pet.Play();
+                        Play();
                         break;
                     case "3":
-                        pet.GoToDoctor();
+                        GoToDoctor();
                         break;
                     case "4":
                         {
@@ -94,6 +94,7 @@ namespace VirtualPetTeam
             Console.WriteLine("What would you like its species?");
             Species = Console.ReadLine();
         }
+        
 
     }
 }
