@@ -37,8 +37,9 @@ namespace VirtualPetTeam
                 Console.WriteLine("You are interacting with all of your pets. Press any key to continue.");
                 Console.ReadLine();
                 Console.Clear();
+                Console.WriteLine("Interact all Menu");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine(" 1 = Feed all pets:\n 2 = Play:\n 3 = Take your pets to the Vet:\n 4 = Quit Interacting with all pets");
+                Console.WriteLine(" 1 = Feed all pets:\n 2 = Play with all Pets:\n 3 = Take your pets to the Vet:\n 4 = Quit Interacting with all pets");
                 Console.ForegroundColor = ConsoleColor.White;
                 interact = Console.ReadLine();
                 switch (interact)
