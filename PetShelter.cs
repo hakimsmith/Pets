@@ -15,9 +15,11 @@ namespace VirtualPetTeam
         }
         public void ShelterInfo()
         {
+            int petNumber = 1;
             foreach (Cat newCat in petList)
             {
-                Console.WriteLine(" Name: " + newCat.Name + " Species: " + newCat.Species + " Hunger: " + newCat.Hunger + " Boredom: " + newCat.Boredom + " Health: " + newCat.Health);
+                Console.WriteLine(petNumber + ": Name: " + newCat.Name + " Species: " + newCat.Species + " Hunger: " + newCat.Hunger + " Boredom: " + newCat.Boredom + " Health: " + newCat.Health);
+                petNumber++;
             }
 
         }

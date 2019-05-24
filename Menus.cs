@@ -32,8 +32,13 @@ namespace VirtualPetTeam
                                 break;
                             case "2":
                                 Console.WriteLine("Select single pet.");
+                                Console.WriteLine("Select a pet from the list by number.");
                                 shelter.ShelterInfo();
+                                int petIndex = Convert.ToInt32(Console.ReadLine()) - 1;
+
                                 
+
+                                break;
 
                         }
                         break;
