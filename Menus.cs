@@ -8,7 +8,6 @@ namespace VirtualPetTeam
     {  
         public void GetMainMenu()
         {
-            
             string menuChoice = "";
             bool playing = true;
             PetShelter shelter = new PetShelter();
@@ -18,7 +17,9 @@ namespace VirtualPetTeam
                 Console.WriteLine("Press any key to continue.");
                 Console.ReadLine();
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info & Status:\n 4 = Exit:");
+                Console.ForegroundColor = ConsoleColor.White;
                 menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 {
