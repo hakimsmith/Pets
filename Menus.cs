@@ -17,7 +17,8 @@ namespace VirtualPetTeam
             {
                 Console.WriteLine("Press any key to continue.");
                 Console.ReadLine();
-                Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info:\n 4 = Pet Status:\n 5 = Exit:");
+                Console.Clear();
+                Console.WriteLine(" 1 = Interact: \n 2 = Add Pet:\n 3 = Pet Info & Status:\n 4 = Exit:");
                 menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 {
@@ -25,7 +26,7 @@ namespace VirtualPetTeam
                         string subInteractMenu = "";
                         Console.WriteLine("1 = Interact with all; == 2 = Interact with single pet;");
                         subInteractMenu = Console.ReadLine();
-                        switch(subInteractMenu)
+                        switch (subInteractMenu)
                         {
                             case "1":
                                 shelter.ShelterInteract();
@@ -41,17 +42,15 @@ namespace VirtualPetTeam
                         break;
 
                     case "3":
+                        
                         shelter.ShelterInfo();
                         break;
 
                     case "4":
-                        newCat.PetStatus();
-                        break;
-
-                    case "5":
                         playing = false;
                         break;
                 }
+               
             }
             while (playing);
         }

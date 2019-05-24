@@ -60,8 +60,9 @@ namespace VirtualPetTeam
             string interact = "";
             do
             {
-                Console.WriteLine("You are interacting with your pet" + ". Press any key to continue.");
+                Console.WriteLine("You are interacting with your selected pet. Press any key to continue.");
                 Console.ReadLine();
+                Console.Clear();
                 Console.WriteLine(" 1 = Feed:\n 2 = Play:\n 3 = Take your pet to the Vet:\n 4 = Quit Interacting");
                 interact = Console.ReadLine();
                 switch (interact)
@@ -91,10 +92,8 @@ namespace VirtualPetTeam
         {
             Console.WriteLine("What would you like to name your pet?");
             Name = Console.ReadLine();
-            Console.WriteLine("What would you like its species?");
+            Console.WriteLine("What would you like its species to be?");
             Species = Console.ReadLine();
         }
-        
-
     }
 }
