@@ -6,12 +6,12 @@ namespace VirtualPetTeam
 {
     class PetShelter
     {
-        Cat newCat = new Cat("no name", "no species");
-        List<Cat> petList = new List<Cat>();
+        Pet newCat = new Pet("no name", "no species");
+        List<Pet> petList = new List<Pet>();
 
         public void AddPetToShelter()
         {
-            Cat newCat = new Cat("no name", "no species");
+            Pet newCat = new Pet("no name", "no species");
             newCat.AddPet();
             petList.Add(newCat);
         }
@@ -19,7 +19,7 @@ namespace VirtualPetTeam
         public void ShelterInfo()
         {
             int petNumber = 1;
-            foreach (Cat newCat in petList)
+            foreach (Pet newCat in petList)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(petNumber + ": Name: " + newCat.Name + " Species: " + newCat.Species + " Hunger: " + newCat.Hunger + " Boredom: " + newCat.Boredom + " Health: " + newCat.Health);
@@ -45,19 +45,19 @@ namespace VirtualPetTeam
                 switch (interact)
                 {
                     case "1":
-                        foreach (Cat newCat in petList)
+                        foreach (Pet newCat in petList)
                         {
                             newCat.Feed();
                         }
                         break;
                     case "2":
-                        foreach (Cat newCat in petList)
+                        foreach (Pet newCat in petList)
                         {
                             newCat.Play();
                         }
                         break;
                     case "3":
-                        foreach (Cat newCat in petList)
+                        foreach (Pet newCat in petList)
                         {
                             newCat.GoToDoctor();
                         }

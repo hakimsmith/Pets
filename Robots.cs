@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualPetTeam
 {
-    class Robots : Cat
+    class Robots : Pet
     {
         public int Oil { get; set; }
         public int Performance { get; set; }
@@ -15,7 +15,7 @@ namespace VirtualPetTeam
             Performance = 15;
         }
 
-        public override void AddPet()
+     /*   public override void AddPet()
         {
             base.AddPet();
         }
@@ -23,7 +23,7 @@ namespace VirtualPetTeam
         public override void PetStatus()
         {
         }
-
+*/
 
     }
 }

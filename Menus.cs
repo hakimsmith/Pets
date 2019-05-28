@@ -11,7 +11,7 @@ namespace VirtualPetTeam
             string menuChoice = "";
             bool playing = true;
             PetShelter shelter = new PetShelter();
-            Cat newCat = new Cat("no name", "no species");
+            //Pet newCat = new Pet("no name", "no species");
             do
             {
                 Console.WriteLine("Press any key to continue.");

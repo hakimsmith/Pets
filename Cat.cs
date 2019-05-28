@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualPetTeam
 {
-    class Cat
+    class Pet
     {
         public string Name { get; set; }
         public string Species { get; set; }
@@ -12,7 +12,7 @@ namespace VirtualPetTeam
         public int Boredom { get; set; }
         public int Health { get; set; }
 
-        public Cat(string name, string species)
+        public Pet(string name, string species)
         {
             Name = name;
             Species = species;
