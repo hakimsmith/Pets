@@ -5,24 +5,45 @@ using System.Text;
 namespace VirtualPetTeam
 {
     class PetShelter
-    {
-        Pet pet = new Pet("no name", "no species");
-        List<Pet> petList = new List<Pet>();
+    {       
+        OrganicPet OrganicPet = new OrganicPet("no name", "no species");
+        List<OrganicPet> OrganicPetsList = new List<OrganicPet>();
+        RoboticPet RoboticPet = new RoboticPet("no name", "no species");
+        List<RoboticPet> RoboticPetsList = new List<RoboticPet>();
 
-        public void AddPetToShelter()
+        public void AddOrganicToShelter()
         {
-            Pet pet = new Pet("no name", "no species");
-            pet.AddPet();
-            petList.Add(pet);
+            OrganicPet OrganicPet = new OrganicPet("no name", "no species");
+            OrganicPet.AddPet();
+            OrganicPetsList.Add(OrganicPet);
         }
 
-        public void ShelterInfo()
+        public void AddRoboticToShelter()
+        {
+            RoboticPet RoboticPet = new RoboticPet("no name", "no species");
+            RoboticPet.AddPet();
+            RoboticPetsList.Add(RoboticPet);
+        }
+
+        public void ShelterOrganicInfo()
         {
             int petNumber = 1;
-            foreach (Pet pet in petList)
+            foreach (OrganicPet organicPet in OrganicPetsList)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(petNumber + ": Name: " + pet.Name + " Species: " + pet.Species + " Hunger: " + pet.Hunger + " Boredom: " + pet.Boredom + " Health: " + pet.Health);
+                Console.WriteLine(petNumber + ": Name: " + organicPet.Name + " Species: " + organicPet.Species + " Hunger: " + organicPet.Hunger + " Boredom: " + organicPet.Boredom + " Health: " + organicPet.Health);
+                petNumber++;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
+
+        public void ShelterRoboticInfo()
+        {
+            int petNumber = 1;
+            foreach (RoboticPet roboticPet in RoboticPetsList)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"{petNumber}: Name: {roboticPet.Name} Species: {roboticPet.Species} Boredom: {roboticPet.Boredom} Oil: {roboticPet.Oil} Maitenance: {roboticPet.Maitenance}.");
                 petNumber++;
                 Console.ForegroundColor = ConsoleColor.White;
             }
@@ -34,6 +55,7 @@ namespace VirtualPetTeam
             string interact = "";
             do
             {
+               
                 Console.WriteLine("You are interacting with all of your pets. Press any key to continue.");
                 Console.ReadLine();
                 Console.Clear();
