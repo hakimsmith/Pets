@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace VirtualPetTeam
 {
     class Program
@@ -8,7 +9,7 @@ namespace VirtualPetTeam
         {
             
             Menus mainMenu = new Menus();
-            Console.WriteLine("Welcome to the Pet Shelter.");
+            Console.WriteLine("                                               WELCOME TO THE PET SHELTER!\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
             mainMenu.GetMainMenu();
             Console.WriteLine("Thanks for playing!");
         } 

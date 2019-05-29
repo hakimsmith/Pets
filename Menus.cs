@@ -33,6 +33,8 @@ namespace VirtualPetTeam
                                 string subRoboticInteractMenu = "";
                                 Console.WriteLine("1: Interact with all Robotic Pets\n 2: Interact with one Robot");
                                 subRoboticInteractMenu = Console.ReadLine();
+                                // (subRoboticInteractMenu == "1") ? shelter.RoboticInteract(); : (
+
                                 switch (subRoboticInteractMenu)
                                 {
                                     case "1":
