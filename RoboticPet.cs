@@ -27,5 +27,37 @@ namespace VirtualPetTeam
             Console.WriteLine($"You have performed maitenance on {Name}.");
         }
 
+        public void InteractRobotic()
+        {
+            bool interacting = true;
+            string interact = "";
+            do
+            {
+                Console.WriteLine("You are interacting with " + Name + ". Press any key to continue.");
+                Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Interact Menu");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine(" 1 = Oil:\n 2 = Play:\n 3 = Perform Maitenance on your robot:\n 4 = Quit Interacting");
+                Console.ForegroundColor = ConsoleColor.White;
+                interact = Console.ReadLine();
+                switch (interact)
+                {
+                    case "1":
+                        GetOil();
+                        break;
+                    case "2":
+                        Play();
+                        break;
+                    case "3":
+                        GetMaitenance();
+                        break;
+                    case "4":
+                        interacting = false;
+                        break;
+                }
+            }
+            while (interacting);
+        }
     }
 }

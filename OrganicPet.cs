@@ -53,10 +53,8 @@ namespace VirtualPetTeam
                         GoToDoctor();
                         break;
                     case "4":
-                        {
-                            interacting = false;
-                        }
-                        while (interacting) ;
+
+                        interacting = false;
                         break;
                 }
             }
