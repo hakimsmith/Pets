@@ -6,23 +6,23 @@ namespace VirtualPetTeam
 {
     class PetShelter
     {
-        Pet newCat = new Pet("no name", "no species");
+        Pet pet = new Pet("no name", "no species");
         List<Pet> petList = new List<Pet>();
 
         public void AddPetToShelter()
         {
-            Pet newCat = new Pet("no name", "no species");
-            newCat.AddPet();
-            petList.Add(newCat);
+            Pet pet = new Pet("no name", "no species");
+            pet.AddPet();
+            petList.Add(pet);
         }
 
         public void ShelterInfo()
         {
             int petNumber = 1;
-            foreach (Pet newCat in petList)
+            foreach (Pet pet in petList)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(petNumber + ": Name: " + newCat.Name + " Species: " + newCat.Species + " Hunger: " + newCat.Hunger + " Boredom: " + newCat.Boredom + " Health: " + newCat.Health);
+                Console.WriteLine(petNumber + ": Name: " + pet.Name + " Species: " + pet.Species + " Hunger: " + pet.Hunger + " Boredom: " + pet.Boredom + " Health: " + pet.Health);
                 petNumber++;
                 Console.ForegroundColor = ConsoleColor.White;
             }
@@ -45,21 +45,21 @@ namespace VirtualPetTeam
                 switch (interact)
                 {
                     case "1":
-                        foreach (Pet newCat in petList)
+                        foreach (Pet pet in petList)
                         {
-                            newCat.Feed();
+                            pet.Feed();
                         }
                         break;
                     case "2":
-                        foreach (Pet newCat in petList)
+                        foreach (Pet pet in petList)
                         {
-                            newCat.Play();
+                            pet.Play();
                         }
                         break;
                     case "3":
-                        foreach (Pet newCat in petList)
+                        foreach (Pet pet in petList)
                         {
-                            newCat.GoToDoctor();
+                            pet.GoToDoctor();
                         }
                         break;
                     case "4":
