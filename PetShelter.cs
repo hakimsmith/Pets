@@ -30,7 +30,8 @@ namespace VirtualPetTeam
             int petNumber = 1;
             foreach (OrganicPet organicPet in OrganicPetsList)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nOrganic:");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine(petNumber + ": Name: " + organicPet.Name + " Species: " + organicPet.Species + " Hunger: " + organicPet.Hunger + " Boredom: " + organicPet.Boredom + " Health: " + organicPet.Health);
                 petNumber++;
                 Console.ForegroundColor = ConsoleColor.White;
@@ -42,8 +43,9 @@ namespace VirtualPetTeam
             int petNumber = 1;
             foreach (RoboticPet roboticPet in RoboticPetsList)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine($"{petNumber}: Name: {roboticPet.Name} Species: {roboticPet.Species} Boredom: {roboticPet.Boredom} Oil: {roboticPet.Oil} Maitenance: {roboticPet.Maitenance}.");
+                Console.WriteLine("\nRobots:");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine($"{petNumber}: Name: {roboticPet.Name} Species: {roboticPet.Species} Boredom: {roboticPet.Boredom} Oil: {roboticPet.Oil} Maintenance: {roboticPet.Maitenance}.");
                 petNumber++;
                 Console.ForegroundColor = ConsoleColor.White;
             }
@@ -59,8 +61,8 @@ namespace VirtualPetTeam
                 Console.ReadLine();
                 Console.Clear();
                 Console.WriteLine("Interact all Menu");
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine(" 1 = Oil all Robots:\n 2 = Play with all Robots:\n 3 = Perform maitenance on all Robots:\n 4 = Quit Interacting with all Robots");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(" 1 : Oil all Robots:\n 2 : Play with all Robots:\n 3 : Perform maintenance on all Robots:\n 4 : Quit Interacting with all Robots");
                 Console.ForegroundColor = ConsoleColor.White;
                 interact = Console.ReadLine();
                 switch (interact)
@@ -105,7 +107,7 @@ namespace VirtualPetTeam
                 Console.ReadLine();
                 Console.Clear();
                 Console.WriteLine("Interact all Menu");
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(" 1 = Feed all pets:\n 2 = Play with all Pets:\n 3 = Take your pets to the Vet:\n 4 = Quit Interacting with all pets");
 
                 Console.ForegroundColor = ConsoleColor.White;
@@ -172,6 +174,22 @@ namespace VirtualPetTeam
             int petListSelect = Convert.ToInt32(Console.ReadLine());
             RoboticPetsList.RemoveAt(petListSelect - 1);
         }
+        public void GetTick()
+        {
+            foreach (RoboticPet roboticPet in RoboticPetsList) 
+            {
+                roboticPet.Oil -= 1;
+                roboticPet.Boredom -= 1;
+                roboticPet.Maitenance -= 1;
+            }
+            foreach (OrganicPet organicPet in OrganicPetsList)
+            {
+                organicPet.Boredom -= 1;
+                organicPet.Health -= 1;
+                organicPet.Hunger -= 1;
+            }
+        }
+        
     }
 }
         

@@ -24,7 +24,7 @@ namespace VirtualPetTeam
         public void GetMaitenance()
         {
             Maitenance += 1;
-            Console.WriteLine($"You have performed maitenance on {Name}.");
+            Console.WriteLine($"You have performed maintenance on {Name}.");
         }
 
         public void InteractRobotic()
@@ -37,8 +37,8 @@ namespace VirtualPetTeam
                 Console.ReadLine();
                 Console.Clear();
                 Console.WriteLine("Interact Menu");
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine(" 1 = Oil:\n 2 = Play:\n 3 = Perform Maitenance on your robot:\n 4 = Quit Interacting");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(" 1 : Oil\n 2 : Play\n 3 : Perform Maintenance on your robot\n 4 : Quit Interacting");
                 Console.ForegroundColor = ConsoleColor.White;
                 interact = Console.ReadLine();
                 switch (interact)

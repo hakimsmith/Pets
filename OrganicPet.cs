@@ -38,7 +38,7 @@ namespace VirtualPetTeam
                 Console.Clear();
                 Console.WriteLine("Interact Menu");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine(" 1 = Feed:\n 2 = Play:\n 3 = Take your pet to the Vet:\n 4 = Quit Interacting");
+                Console.WriteLine(" 1: Feed\n 2 : Play\n 3 : Take your pet to the Vet\n 4 : Quit Interacting");
                 Console.ForegroundColor = ConsoleColor.White;
                 interact = Console.ReadLine();
                 switch (interact)

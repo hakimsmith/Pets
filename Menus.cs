@@ -13,6 +13,7 @@ namespace VirtualPetTeam
             PetShelter shelter = new PetShelter();
             do
             {
+                shelter.GetTick();
                 Console.WriteLine("Press any key to continue.");
                 Console.ReadLine();
                 Console.Clear();
