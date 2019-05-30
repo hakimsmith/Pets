@@ -6,60 +6,81 @@ namespace VirtualPetTeam
 {
     class PetShelter
     {
-        Cat newCat = new Cat("no name", "no species");
-        List<Cat> petList = new List<Cat>();
+        OrganicPet OrganicPet = new OrganicPet("no name", "no species");
+        List<OrganicPet> OrganicPetsList = new List<OrganicPet>();
+        RoboticPet RoboticPet = new RoboticPet("no name", "no species");
+        List<RoboticPet> RoboticPetsList = new List<RoboticPet>();
 
-        public void AddPetToShelter()
+        public void AddOrganicToShelter()
         {
-            Cat newCat = new Cat("no name", "no species");
-            newCat.AddPet();
-            petList.Add(newCat);
+            OrganicPet OrganicPet = new OrganicPet("no name", "no species");
+            OrganicPet.AddPet();
+            OrganicPetsList.Add(OrganicPet);
         }
 
-        public void ShelterInfo()
+        public void AddRoboticToShelter()
+        {
+            RoboticPet RoboticPet = new RoboticPet("no name", "no species");
+            RoboticPet.AddPet();
+            RoboticPetsList.Add(RoboticPet);
+        }
+
+        public void ShelterOrganicInfo()
         {
             int petNumber = 1;
-            foreach (Cat newCat in petList)
+            foreach (OrganicPet organicPet in OrganicPetsList)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(petNumber + ": Name: " + newCat.Name + " Species: " + newCat.Species + " Hunger: " + newCat.Hunger + " Boredom: " + newCat.Boredom + " Health: " + newCat.Health);
+                Console.WriteLine(petNumber + ": Name: " + organicPet.Name + " Species: " + organicPet.Species + " Hunger: " + organicPet.Hunger + " Boredom: " + organicPet.Boredom + " Health: " + organicPet.Health);
                 petNumber++;
                 Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
-        public void ShelterInteract()
+        public void ShelterRoboticInfo()
+        {
+            int petNumber = 1;
+            foreach (RoboticPet roboticPet in RoboticPetsList)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"{petNumber}: Name: {roboticPet.Name} Species: {roboticPet.Species} Boredom: {roboticPet.Boredom} Oil: {roboticPet.Oil} Maitenance: {roboticPet.Maitenance}.");
+                petNumber++;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
+
+        public void ShelterRoboticInteract()
         {
             bool interacting = true;
             string interact = "";
             do
             {
-                Console.WriteLine("You are interacting with all of your pets. Press any key to continue.");
+                Console.WriteLine("You are interacting with all of your robotic pets. Press any key to continue.");
                 Console.ReadLine();
                 Console.Clear();
                 Console.WriteLine("Interact all Menu");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine(" 1 = Feed all pets:\n 2 = Play with all Pets:\n 3 = Take your pets to the Vet:\n 4 = Quit Interacting with all pets");
+                Console.WriteLine(" 1 = Oil all Robots:\n 2 = Play with all Robots:\n 3 = Perform maitenance on all Robots:\n 4 = Quit Interacting with all Robots");
                 Console.ForegroundColor = ConsoleColor.White;
                 interact = Console.ReadLine();
                 switch (interact)
                 {
                     case "1":
-                        foreach (Cat newCat in petList)
+                        foreach (RoboticPet roboticPet in RoboticPetsList)
                         {
-                            newCat.Feed();
+                            roboticPet.GetOil();
                         }
                         break;
                     case "2":
-                        foreach (Cat newCat in petList)
+                        foreach (RoboticPet roboticPet in RoboticPetsList)
                         {
-                            newCat.Play();
+                            roboticPet.Play();
                         }
                         break;
                     case "3":
-                        foreach (Cat newCat in petList)
+                        foreach (RoboticPet roboticPet in RoboticPetsList)
                         {
-                            newCat.GoToDoctor();
+                            roboticPet.GetMaitenance();
                         }
                         break;
                     case "4":
@@ -73,13 +94,83 @@ namespace VirtualPetTeam
 
             while (interacting);
         }
-        
-        public void PetSelect()
+
+        public void ShelterOrganicInteract()
+        {
+            bool interacting = true;
+            string interact = "";
+            do
+            {
+                Console.WriteLine("You are interacting with all of your organic pets. Press any key to continue.");
+                Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Interact all Menu");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine(" 1 = Feed all pets:\n 2 = Play with all Pets:\n 3 = Take your pets to the Vet:\n 4 = Quit Interacting with all pets");
+
+                Console.ForegroundColor = ConsoleColor.White;
+                interact = Console.ReadLine();
+                switch (interact)
+                {
+                    case "1":
+                        foreach (OrganicPet organicPet in OrganicPetsList)
+                        {
+                            organicPet.Feed();
+                        }
+                        break;
+                    case "2":
+                        foreach (OrganicPet organicPet in OrganicPetsList)
+                        {
+                            organicPet.Play();
+                        }
+                        break;
+                    case "3":
+                        foreach (OrganicPet organicPet in OrganicPetsList)
+                        {
+                            organicPet.GoToDoctor();
+                        }
+                        break;
+                    case "4":
+                        {
+                            interacting = false;
+                        }
+                        while (interacting) ;
+                        break;
+                }
+            }
+            while (interacting);
+        }
+
+        public void PetRoboticSelect()
         {
             Console.WriteLine("Enter the number of the pet you want to interact with.");
-            ShelterInfo();
+            ShelterRoboticInfo();
             int petListSelect = Convert.ToInt32(Console.ReadLine());
-            petList[petListSelect - 1].Interact();
+            RoboticPetsList[petListSelect - 1].InteractRobotic();
+        }
+
+        public void PetOrganicSelect()
+        {
+            Console.WriteLine("Enter the number of the robot you want interact with.");
+            ShelterOrganicInfo();
+            int petListSelect = Convert.ToInt32(Console.ReadLine());
+            OrganicPetsList[petListSelect - 1].InteractOrganic();
+        }
+
+        public void PetOrganicAdopt()
+        {
+            Console.WriteLine("Enter the number of the organic pet you want adopt.");
+            ShelterOrganicInfo();
+            int petListSelect = Convert.ToInt32(Console.ReadLine());
+            OrganicPetsList.RemoveAt(petListSelect - 1);
+        }
+
+        public void PetRoboticAdopt()
+        {
+            Console.WriteLine("Enter the number of the robotic pet you want adopt.");
+            ShelterRoboticInfo();
+            int petListSelect = Convert.ToInt32(Console.ReadLine());
+            RoboticPetsList.RemoveAt(petListSelect - 1);
         }
     }
 }
