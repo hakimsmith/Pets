@@ -77,7 +77,6 @@ namespace VirtualPetTeam
                                 shelter.AddRoboticToShelter();
                                 break;
                         }
-                       
                         break;
 
                     case "3":
