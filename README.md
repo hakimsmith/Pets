@@ -6,4 +6,4 @@ Intstructions
 4. Once organic and or robotic pet has been created, select the option to interact pet.
     (Note: Overtime pet status will decrease incrementally, interacting with pet will positively increase pet status;)
 5. If you love your pet, you may choose to adopt your pet to take home to join your family.   
-    (Note: Apoption of pet will permanently remove pet from the game. SHIT AIN'T WELCOME BACK.)
+    (Note: Apoption of pet will permanently remove pet from the game.)
