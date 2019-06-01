@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualPetTeam", "VirtualPetTeam.csproj", "{19FBFEA9-945A-44E9-87CF-949DDF513571}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPetTeamTests", "..\VirtualPetTeamTests\VirtualPetTeamTests.csproj", "{337132A7-9B3E-40EE-A138-C22F0BB7F5F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "..\XUnitTestProject1\XUnitTestProject1.csproj", "{7216716B-1324-4A04-904D-8B9636AA3AB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{19FBFEA9-945A-44E9-87CF-949DDF513571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FBFEA9-945A-44E9-87CF-949DDF513571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FBFEA9-945A-44E9-87CF-949DDF513571}.Release|Any CPU.Build.0 = Release|Any CPU
-		{337132A7-9B3E-40EE-A138-C22F0BB7F5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{337132A7-9B3E-40EE-A138-C22F0BB7F5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{337132A7-9B3E-40EE-A138-C22F0BB7F5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{337132A7-9B3E-40EE-A138-C22F0BB7F5F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7216716B-1324-4A04-904D-8B9636AA3AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7216716B-1324-4A04-904D-8B9636AA3AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7216716B-1324-4A04-904D-8B9636AA3AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7216716B-1324-4A04-904D-8B9636AA3AB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
